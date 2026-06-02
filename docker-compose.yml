@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  festival-backend:
+    build: ./backend
+    container_name: tomorrowland-backend
+    ports:
+      - "5000:5000"
+    volumes:
+      # Docker Desktop su Windows gestisce automaticamente la conversione dei percorsi relativi
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  wazuh-manager:
+    image: wazuh/wazuh-manager:4.7.2
+    container_name: tomorrowland-wazuh
+    ports:
+      - "55000:55000"
+    volumes:
+      - ./logs:/var/log/tomorrowland_festival:ro
