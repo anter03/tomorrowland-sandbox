@@ -1,0 +1,19 @@
+<group name="tomorrowland,cyber_domain,">
+
+  <rule id="100100" level="3">
+    <match>AUTH_FAIL</match>
+    <description>Tentativo di accesso fallito rilevato</description>
+  </rule>
+
+  <rule id="100101" level="10" frequency="5" timeframe="10">
+    <if_matched_sid>100100</if_matched_sid>
+    <same_source_ip />
+    <description>Possibile attacco Brute Force (CWE-307): 5 tentativi falliti in 10 secondi</description>
+  </rule>
+
+  <rule id="100102" level="12">
+    <match>UPDATE_PUSHED_SUCCESSFULLY</match>
+    <description>Compromissione Supply Chain (CWE-494): File di aggiornamento non firmato rilevato</description>
+  </rule>
+
+</group>

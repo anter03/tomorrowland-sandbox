@@ -1,0 +1,85 @@
+2026-06-04 17:29:16,805 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2026-06-04 17:29:16,806 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-04 17:29:45,951 - INFO - 172.18.0.1 - - [04/Jun/2026 17:29:45] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:29:46,074 - INFO - 172.18.0.1 - - [04/Jun/2026 17:29:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-04 17:31:49,975 - INFO - 172.18.0.1 - - [04/Jun/2026 17:31:49] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:31:52,787 - INFO - 172.18.0.1 - - [04/Jun/2026 17:31:52] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:31:59,906 - INFO - 172.18.0.1 - - [04/Jun/2026 17:31:59] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:32:00,436 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:00] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:32:00,599 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:00] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:32:00,760 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:00] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:32:00,922 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:00] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:32:01,060 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:01] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:32:01,236 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:01] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:32:44,276 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2026-06-04 17:32:44,278 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-04 17:32:47,176 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:47] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:32:48,134 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:48] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:32:49,640 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:49] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:32:53,302 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:53] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-06-04 17:32:55,337 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:55] "[33mGET / HTTP/1.1[0m" 404 -
+2026-06-04 17:32:55,391 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:55] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-06-04 17:32:55,408 - INFO - 172.18.0.1 - - [04/Jun/2026 17:32:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-04 17:33:54,373 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2026-06-04 17:33:54,375 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-04 17:34:12,105 - INFO - 172.18.0.1 - - [04/Jun/2026 17:34:12] "GET / HTTP/1.1" 200 -
+2026-06-04 17:34:18,816 - INFO - 172.18.0.1 - - [04/Jun/2026 17:34:18] "GET / HTTP/1.1" 200 -
+2026-06-04 17:39:13,774 - INFO - 172.18.0.1 - - [04/Jun/2026 17:39:13] "GET / HTTP/1.1" 200 -
+2026-06-04 17:39:14,335 - INFO - 172.18.0.1 - - [04/Jun/2026 17:39:14] "GET / HTTP/1.1" 200 -
+2026-06-04 17:39:25,928 - INFO - 172.18.0.1 - - [04/Jun/2026 17:39:25] "[31m[1mGET /api/v1/staff/auth HTTP/1.1[0m" 405 -
+2026-06-04 17:44:30,228 - WARNING - AUTH_FAIL: Tentativo di accesso fallito
+2026-06-04 17:44:30,232 - INFO - 172.18.0.1 - - [04/Jun/2026 17:44:30] "[31m[1mPOST /api/v1/staff/auth HTTP/1.1[0m" 401 -
+2026-06-04 17:44:30,344 - WARNING - AUTH_FAIL: Tentativo di accesso fallito
+2026-06-04 17:44:30,346 - INFO - 172.18.0.1 - - [04/Jun/2026 17:44:30] "[31m[1mPOST /api/v1/staff/auth HTTP/1.1[0m" 401 -
+2026-06-04 17:44:30,454 - WARNING - AUTH_FAIL: Tentativo di accesso fallito
+2026-06-04 17:44:30,455 - INFO - 172.18.0.1 - - [04/Jun/2026 17:44:30] "[31m[1mPOST /api/v1/staff/auth HTTP/1.1[0m" 401 -
+2026-06-04 17:44:30,567 - WARNING - AUTH_FAIL: Tentativo di accesso fallito
+2026-06-04 17:44:30,568 - INFO - 172.18.0.1 - - [04/Jun/2026 17:44:30] "[31m[1mPOST /api/v1/staff/auth HTTP/1.1[0m" 401 -
+2026-06-04 17:44:30,677 - WARNING - AUTH_FAIL: Tentativo di accesso fallito
+2026-06-04 17:44:30,677 - INFO - 172.18.0.1 - - [04/Jun/2026 17:44:30] "[31m[1mPOST /api/v1/staff/auth HTTP/1.1[0m" 401 -
+2026-06-04 17:44:30,788 - WARNING - AUTH_FAIL: Tentativo di accesso fallito
+2026-06-04 17:44:30,789 - INFO - 172.18.0.1 - - [04/Jun/2026 17:44:30] "[31m[1mPOST /api/v1/staff/auth HTTP/1.1[0m" 401 -
+2026-06-04 17:44:30,901 - INFO - AUTH_SUCCESS
+2026-06-04 17:44:30,903 - INFO - 172.18.0.1 - - [04/Jun/2026 17:44:30] "POST /api/v1/staff/auth HTTP/1.1" 200 -
+2026-06-04 17:44:56,756 - INFO - UPDATE_PUSHED_SUCCESSFULLY
+2026-06-04 17:44:56,757 - INFO - 172.18.0.1 - - [04/Jun/2026 17:44:56] "POST /api/v1/app/deploy HTTP/1.1" 200 -
+2026-06-04 17:45:17,559 - INFO - 172.18.0.1 - - [04/Jun/2026 17:45:17] "GET / HTTP/1.1" 200 -
+2026-06-04 17:45:21,122 - INFO - 172.18.0.1 - - [04/Jun/2026 17:45:21] "GET / HTTP/1.1" 200 -
+2026-06-04 17:49:47,087 - INFO - 172.18.0.1 - - [04/Jun/2026 17:49:47] "GET / HTTP/1.1" 200 -
+2026-06-04 17:59:14,324 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2026-06-04 17:59:14,326 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-04 17:59:53,911 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2026-06-04 17:59:53,912 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-04 18:00:18,788 - WARNING - AUTH_FAIL: Tentativo di accesso fallito per m.rossi@tomorrowland.com dall'IP 172.18.0.1
+2026-06-04 18:00:18,790 - INFO - 172.18.0.1 - - [04/Jun/2026 18:00:18] "[31m[1mPOST /api/v1/staff/auth HTTP/1.1[0m" 401 -
+2026-06-04 18:00:18,901 - WARNING - AUTH_FAIL: Tentativo di accesso fallito per m.rossi@tomorrowland.com dall'IP 172.18.0.1
+2026-06-04 18:00:18,902 - INFO - 172.18.0.1 - - [04/Jun/2026 18:00:18] "[31m[1mPOST /api/v1/staff/auth HTTP/1.1[0m" 401 -
+2026-06-04 18:00:19,013 - WARNING - AUTH_FAIL: Tentativo di accesso fallito per m.rossi@tomorrowland.com dall'IP 172.18.0.1
+2026-06-04 18:00:19,014 - INFO - 172.18.0.1 - - [04/Jun/2026 18:00:19] "[31m[1mPOST /api/v1/staff/auth HTTP/1.1[0m" 401 -
+2026-06-04 18:00:19,124 - WARNING - AUTH_FAIL: Tentativo di accesso fallito per m.rossi@tomorrowland.com dall'IP 172.18.0.1
+2026-06-04 18:00:19,125 - INFO - 172.18.0.1 - - [04/Jun/2026 18:00:19] "[31m[1mPOST /api/v1/staff/auth HTTP/1.1[0m" 401 -
+2026-06-04 18:00:19,239 - WARNING - AUTH_FAIL: Tentativo di accesso fallito per m.rossi@tomorrowland.com dall'IP 172.18.0.1
+2026-06-04 18:00:19,241 - INFO - 172.18.0.1 - - [04/Jun/2026 18:00:19] "[31m[1mPOST /api/v1/staff/auth HTTP/1.1[0m" 401 -
+2026-06-04 18:00:19,351 - WARNING - AUTH_FAIL: Tentativo di accesso fallito per m.rossi@tomorrowland.com dall'IP 172.18.0.1
+2026-06-04 18:00:19,352 - INFO - 172.18.0.1 - - [04/Jun/2026 18:00:19] "[31m[1mPOST /api/v1/staff/auth HTTP/1.1[0m" 401 -
+2026-06-04 18:00:19,463 - INFO - AUTH_SUCCESS: m.rossi@tomorrowland.com è entrato nella Dashboard Crowd AI.
+2026-06-04 18:00:19,465 - INFO - 172.18.0.1 - - [04/Jun/2026 18:00:19] "POST /api/v1/staff/auth HTTP/1.1" 200 -
+2026-06-04 18:00:39,929 - INFO - DATA_ACCESS: Dati RFID esportati dalla dashboard.
+2026-06-04 18:00:39,930 - INFO - 172.18.0.1 - - [04/Jun/2026 18:00:39] "GET /api/v1/rfid/telemetry HTTP/1.1" 200 -
+2026-06-04 18:01:32,664 - INFO - UPDATE_PUSHED_SUCCESSFULLY: Fake Update 'malware_rfid.js' inviato a 100.000 braccialetti.
+2026-06-04 18:01:32,666 - INFO - 172.18.0.1 - - [04/Jun/2026 18:01:32] "POST /api/v1/app/deploy HTTP/1.1" 200 -

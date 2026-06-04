@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Attack Visualizer - Tomorrowland Sandbox</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --panel-bg: #1e293b;
+            --red-team: #ef4444;
+            --blue-team: #3b82f6;
+            --text: #f8fafc;
+        }
+        body { 
+            margin: 0; 
+            font-family: 'Inter', system-ui, sans-serif; 
+            background: var(--bg-color); 
+            color: var(--text); 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            overflow: hidden;
+        }
+        header { 
+            padding: 1.5rem; 
+            text-align: center; 
+            background: rgba(0,0,0,0.3); 
+            border-bottom: 1px solid #334155; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1 { margin: 0; font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; color: #e2e8f0; }
+        .subtitle { font-size: 0.9rem; color: #94a3b8; margin-top: 5px; }
+        
+        .controls { padding: 1.5rem; text-align: center; }
+        button { 
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white; 
+            border: none; 
+            padding: 12px 30px; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            font-size: 1.1rem; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        button:hover { background: linear-gradient(135deg, #60a5fa, #3b82f6); transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.3); }
+        button:disabled { background: #475569; cursor: not-allowed; transform: none; box-shadow: none; color: #94a3b8;}
+
+        .container { display: flex; flex: 1; padding: 0 2rem 2rem 2rem; gap: 2rem; }
+        
+        .panel { 
+            flex: 1; 
+            background: var(--panel-bg); 
+            border-radius: 12px; 
+            display: flex; 
+            flex-direction: column; 
+            border: 1px solid #334155; 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5); 
+            overflow: hidden;
+        }
+        .panel-header { 
+            padding: 1rem 1.5rem; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            background: rgba(0,0,0,0.2);
+        }
+        .red-header { color: var(--red-team); border-bottom: 2px solid var(--red-team); }
+        .blue-header { color: var(--blue-team); border-bottom: 2px solid var(--blue-team); }
+        
+        .content { 
+            flex: 1; 
+            padding: 1.5rem; 
+            overflow-y: auto; 
+            font-family: 'Fira Code', monospace; 
+            font-size: 0.95rem; 
+            line-height: 1.6;
+        }
+        
+        .term-line { margin: 6px 0; opacity: 0; animation: slideIn 0.3s forwards; }
+        
+        .alert { 
+            background: rgba(239,68,68,0.1); 
+            border-left: 4px solid var(--red-team); 
+            padding: 15px; 
+            margin-bottom: 15px; 
+            border-radius: 0 8px 8px 0; 
+            opacity: 0; 
+            animation: slideIn 0.4s forwards; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .alert-title { font-weight: bold; color: #fca5a5; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 1.05rem;}
+        .alert-detail { color: #cbd5e1; font-size: 0.9rem; font-family: 'Inter', sans-serif; line-height: 1.4;}
+        
+        @keyframes slideIn { 
+            from { opacity: 0; transform: translateX(-10px); } 
+            to { opacity: 1; transform: translateX(0); } 
+        }
+        
+        @keyframes pulseAlert {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        .text-success { color: #10b981; }
+        .text-error { color: #ef4444; }
+        .text-warning { color: #f59e0b; }
+        .text-muted { color: #64748b; }
+        
+        /* Scrollbar custom */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tomorrowland Sandbox - Attack Visualizer</h1>
+        <div class="subtitle">Dimostrazione PoC: Kill Chain & SIEM Detection</div>
+    </header>
+    
+    <div class="controls">
+        <button id="startBtn" onclick="runSimulation()">Avvia Simulazione Interattiva</button>
+    </div>
+
+    <div class="container">
+        <!-- Red Team Panel -->
+        <div class="panel">
+            <div class="panel-header red-header">
+                <span>🔴 Red Team</span>
+                <span class="text-muted" style="font-size: 0.8rem;">Attacker Terminal</span>
+            </div>
+            <div class="content" id="redTerm">
+                <div class="text-muted">> Sistema pronto. In attesa di avvio simulazione...</div>
+            </div>
+        </div>
+
+        <!-- Blue Team Panel -->
+        <div class="panel">
+            <div class="panel-header blue-header">
+                <span>🔵 Blue Team</span>
+                <span class="text-muted" style="font-size: 0.8rem;">SOC / Wazuh SIEM</span>
+            </div>
+            <div class="content" id="blueTerm">
+                <div class="text-muted">Monitoraggio log di sicurezza attivo. Nessun evento anomalo rilevato.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const redTerm = document.getElementById('redTerm');
+        const blueTerm = document.getElementById('blueTerm');
+        
+        function addRedLine(html) {
+            const el = document.createElement('div');
+            el.className = 'term-line';
+            el.innerHTML = html;
+            redTerm.appendChild(el);
+            redTerm.scrollTop = redTerm.scrollHeight;
+        }
+
+        function addBlueAlert(title, detail, level) {
+            const el = document.createElement('div');
+            el.className = 'alert';
+            if(level === 'high') {
+                el.style.borderColor = '#ef4444';
+                el.style.background = 'rgba(239,68,68,0.15)';
+            } else if(level === 'critical') {
+                el.style.borderColor = '#dc2626';
+                el.style.background = 'rgba(220,38,38,0.2)';
+                el.style.animation = 'slideIn 0.4s forwards, pulseAlert 2s infinite';
+                title = '🚨 ' + title;
+            } else {
+                el.style.borderColor = '#f59e0b';
+                el.style.background = 'rgba(245,158,11,0.15)';
+                title = '⚠️ ' + title;
+            }
+            el.innerHTML = `<div class="alert-title">${title}</div><div class="alert-detail">${detail}</div>`;
+            blueTerm.appendChild(el);
+            blueTerm.scrollTop = blueTerm.scrollHeight;
+        }
+
+        async function runSimulation() {
+            document.getElementById('startBtn').disabled = true;
+            redTerm.innerHTML = '';
+            blueTerm.innerHTML = '';
+
+            const delay = ms => new Promise(res => setTimeout(res, ms));
+
+            // FASE 1: BRUTE FORCE
+            addRedLine('> Esecuzione <strong>attack_scripts/brute_force.py</strong>...');
+            await delay(1000);
+            
+            for(let i=1; i<=5; i++) {
+                addRedLine(`[-] Tentativo fallito con password casuale | Status: 401`);
+                await delay(250);
+            }
+            
+            await delay(600);
+            addBlueAlert('Wazuh Alert: 100101 (Level 10)', 'Possibile attacco Brute Force (CWE-307) rilevato verso l\'endpoint /api/v1/staff/auth. > 5 fallimenti in 10 sec.', 'high');
+
+            await delay(1200);
+            addRedLine(`<span class="text-success">[+] Login effettuato con password "cashless2026"! Status: 200</span>`);
+            addRedLine(`<span class="text-warning">[+] Ottenuto Token: JWT_ADMIN_VALIDO_12345</span>`);
+            
+            await delay(2500);
+            
+            // FASE 2: DATA BREACH
+            addRedLine('<br>> Esecuzione <strong>attack_scripts/steal_data.py</strong>...');
+            await delay(1000);
+            addRedLine(`[*] Connessione a /api/v1/rfid/telemetry usando Bearer Token...`);
+            await delay(800);
+            addRedLine(`<span class="text-success">[+] HTTP 200: JSON scaricato. Dati RFID di 2 partecipanti esfiltrati (Data Breach completato).</span>`);
+            
+            await delay(1500);
+            addBlueAlert('Wazuh Event (Anomalia)', 'Picco di traffico anomalo: Accesso massivo in lettura all\'API di telemetria RFID.', 'medium');
+
+            await delay(2500);
+
+            // FASE 3: COMPROMISSIONE
+            addRedLine('<br>> Esecuzione <strong>attack_scripts/deploy_malware.py</strong>...');
+            await delay(1000);
+            addRedLine(`[*] Caricamento payload malevolo (malware_rfid.js)...`);
+            await delay(1200);
+            addRedLine(`<span class="text-success">[+] Risposta del server: Update deployed successfully</span>`);
+            addRedLine(`<span class="text-error">[!] PAYLOAD ATTIVO: Modulo NFC sovrascritto. Sistema di pagamento cashless bloccato.</span>`);
+
+            await delay(800);
+            addBlueAlert('Wazuh Alert: 100102 (Level 12)', 'CRITICAL: Compromissione Supply Chain (CWE-494). Rilevato push di un aggiornamento malevolo (malware_rfid.js) distribuito ai dispositivi.', 'critical');
+
+            await delay(1000);
+            addRedLine('<br><span class="text-muted">--- Simulazione Completata ---</span>');
+            document.getElementById('startBtn').disabled = false;
+        }
+    </script>
+</body>
+</html>
