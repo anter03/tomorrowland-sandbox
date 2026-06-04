@@ -31,12 +31,16 @@
     <script>
         setInterval(async () => {
             try {
-                const response = await fetch('/api/v1/alert');
+                const response = await fetch('/api/messages');
                 const data = await response.json();
-                if (data.alert) {
+                if (data.messages && data.messages.length > 0) {
+                    const lastMsg = data.messages[data.messages.length - 1];
                     document.getElementById('app-content').style.display = 'none';
                     document.getElementById('panic-banner').style.display = 'flex';
-                    document.getElementById('alert-message').innerText = data.alert;
+                    document.getElementById('alert-message').innerText = lastMsg;
+                } else {
+                    document.getElementById('app-content').style.display = 'block';
+                    document.getElementById('panic-banner').style.display = 'none';
                 }
             } catch (err) {
                 console.error("Errore di sincronizzazione con l'infrastruttura del festival", err);

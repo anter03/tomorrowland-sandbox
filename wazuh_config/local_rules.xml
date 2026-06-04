@@ -1,0 +1,28 @@
+<group name="festival_app_security,">
+
+  <rule id="100010" level="3">
+    <if_sid>86600</if_sid>
+    <field name="EVENT_TYPE">\.+</field>
+    <description>Festival App: Evento generico registrato</description>
+  </rule>
+
+  <rule id="100011" level="5">
+    <if_sid>100010</if_sid>
+    <field name="EVENT_TYPE">UNAUTHORIZED_ACCESS</field>
+    <description>Festival App: Tentativo di accesso non autorizzato all'API di Broadcast</description>
+    <mitre>
+      <id>T1190</id>
+    </mitre>
+  </rule>
+
+  <rule id="100012" level="12">
+    <if_sid>100010</if_sid>
+    <field name="EVENT_TYPE">CRITICAL_API_BYPASS</field>
+    <description>Festival App INCIDENT: Bypass dell'autenticazione sfruttato su /api/broadcast. Rischio di manipolazione Dominio Informativo imminente.</description>
+    <group>authentication_bypass, pci_dss_10.2.4,</group>
+    <mitre>
+      <id>T1078</id> <id>T1498</id>
+    </mitre>
+  </rule>
+
+</group>

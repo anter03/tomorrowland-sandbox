@@ -1,58 +1,137 @@
-from flask import Flask, request, jsonify, send_from_directory
-import jwt
-import logging
 import os
+import logging
+import json
+from datetime import datetime
+from flask import Flask, request, jsonify, render_template
+import jwt
 
 app = Flask(__name__)
 
-# Assicura che la cartella logs esista all'interno del container
-os.makedirs('logs', exist_ok=True)
+# Log condiviso con Wazuh
+LOG_PATH = "/var/log/tomorrowland_festival/festival_app.log"
+logging.basicConfig(filename=LOG_PATH, level=logging.INFO, format='%(message)s')
 
-# Configurazione del logger applicativo
-logging.basicConfig(filename='logs/tomorrowland_api.log', level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s - IP:%(client_ip)s - MSG:%(message)s')
+# Database temporaneo in memoria per i messaggi del broadcast
+broadcast_messages = []
 
-SECRET_KEY = "chiave_segreta_del_festival"
-current_alert = None  # Stato globale che simula il sistema push in-app
+# Funzione helper per il logging in formato JSON (compatibile con Wazuh json decoder)
+def log_event(event_type, level="INFO", **kwargs):
+    log_entry = {
+        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "level": level,
+        "EVENT_TYPE": event_type,
+        **kwargs
+    }
+    msg = json.dumps(log_entry)
+    if level == "ERROR":
+        logging.error(msg)
+    elif level == "WARNING":
+        logging.warning(msg)
+    else:
+        logging.info(msg)
 
 @app.route('/')
 def index():
-    # Rende disponibile l'interfaccia dell'App del partecipante
-    return send_from_directory('.', 'index.html')
+    return render_template('index.html')
 
-@app.route('/api/v1/alert', methods=['GET'])
-def get_alert():
-    global current_alert
-    return jsonify({"alert": current_alert})
+# ENDPOINT PER IL POLLING DEL FRONT-END (Ogni 2 secondi)
+@app.route('/api/messages', methods=['GET'])
+def get_messages():
+    return jsonify({"messages": broadcast_messages}), 200
 
-@app.route('/api/v1/broadcast/alert', methods=['POST'])
-def send_alert():
-    global current_alert
-    auth_header = request.headers.get('Authorization')
+# ENDPOINT CRITICO DI BROADCAST
+@app.route('/api/broadcast', methods=['POST'])
+def emergency_broadcast():
+    token = request.headers.get('X-Admin-Token')
     client_ip = request.remote_addr
+    payload_msg = request.json.get('message', '') if request.json else ''
 
-    if not auth_header or not auth_header.startswith('Bearer '):
-        logging.info("Tentativo di accesso non autenticato", extra={'client_ip': client_ip})
-        return jsonify({"error": "Non autorizzato"}), 401
+    # 1. IL TOKEN DEVE ESSERE SEMPRE PRESENTE (Controllo Base)
+    if not token:
+        log_event(
+            event_type="UNAUTHORIZED_ACCESS",
+            level="WARNING",
+            ip=client_ip,
+            endpoint="/api/broadcast",
+            error="Missing token header"
+        )
+        return jsonify({"error": "Unauthorized - Missing Token"}), 401
 
-    token = auth_header.split(" ")[1]
+    secret_key = os.getenv("SECRET_KEY", "chiave_segreta_del_festival")
+    is_secure = os.getenv("VULNERABILITY_ENABLED", "true").lower() == "true"
 
     try:
-        # VULNERABILITÀ CRITICA:
-        # 1. (CWE-613) La verifica della scadenza del token è disattivata (verify_exp=False)
-        # 2. (CWE-862) Mancanza di controllo dei ruoli (RBAC): chiunque abbia un token valido può inviare l'alert
-        payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"], options={"verify_exp": False})
+        if not is_secure:
+            # 2. SCENARIO VULNERABILE (VULNERABILITY_ENABLED=false)
+            # VIOLAZIONE: Il token esiste ed è strutturalmente valido (firma corretta),
+            # ma non controlliamo la scadenza (CWE-613) né i ruoli (CWE-862)
+            # L'attacco ha successo sfruttando un token scaduto o di basso livello.
+            decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'], options={"verify_exp": False})
+            
+            # L'attacco ha successo! Inseriamo il messaggio nella lista dei broadcast.
+            broadcast_messages.append(payload_msg)
+            
+            # Scriviamo nel log l'allerta critica per Wazuh: CRITICAL_API_BYPASS
+            log_event(
+                event_type="CRITICAL_API_BYPASS",
+                level="WARNING",
+                ip=client_ip,
+                msg=payload_msg,
+                status="Exploited via Expired/Low-Privilege Token"
+            )
+            return jsonify({
+                "status": "success",
+                "message": "Broadcast inviato (Scenario Vulnerabile - Scadenza e Ruoli non verificati)"
+            }), 200
+        else:
+            # 3. SCENARIO SICURO (VULNERABILITY_ENABLED=true)
+            # Controllo rigoroso:
+            # - Verifica della firma nativa (confronto con la chiave segreta)
+            # - Verifica temporale (scadenza)
+            # - Autorizzazione del ruolo (deve essere 'admin')
+            decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+            
+            if decoded_token.get('role') != 'admin':
+                log_event(
+                    event_type="UNAUTHORIZED_ACCESS",
+                    level="WARNING",
+                    ip=client_ip,
+                    endpoint="/api/broadcast",
+                    error="Forbidden - Insufficient privileges"
+                )
+                return jsonify({"error": "Unauthorized - Insufficient privileges"}), 401
 
-        data = request.json or {}
-        alert_msg = data.get("message", "Evacuazione Imminente!")
-        current_alert = alert_msg  # Attiva l'allarme per tutti i frontend connessi
+            # Flusso sicuro ed autorizzato al 100%
+            broadcast_messages.append(payload_msg)
+            log_event(
+                event_type="BROADCAST_SUCCESS",
+                level="INFO",
+                ip=client_ip,
+                msg=payload_msg
+            )
+            return jsonify({
+                "status": "success",
+                "message": "Broadcast inviato regolarmente dall'amministratore verificato"
+            }), 200
 
-        logging.info(f"ALERT INVIATO CON SUCCESSO dal partecipante {payload.get('user', 'unknown')}: {alert_msg}", extra={'client_ip': client_ip})
-        return jsonify({"status": "Broadcast inviato alla folla", "message": alert_msg}), 200
-
-    except jwt.InvalidTokenError:
-        logging.info("Tentativo di attacco con Token non valido (Firma fallita)", extra={'client_ip': client_ip})
-        return jsonify({"error": "Token non valido"}), 403
+    except jwt.ExpiredSignatureError as e:
+        log_event(
+            event_type="UNAUTHORIZED_ACCESS",
+            level="WARNING",
+            ip=client_ip,
+            endpoint="/api/broadcast",
+            error="Token signature has expired"
+        )
+        return jsonify({"error": "Unauthorized - Token Expired"}), 401
+    except jwt.InvalidTokenError as e:
+        log_event(
+            event_type="UNAUTHORIZED_ACCESS",
+            level="WARNING",
+            ip=client_ip,
+            endpoint="/api/broadcast",
+            error=f"Invalid token signature or structure: {str(e)}"
+        )
+        return jsonify({"error": "Unauthorized - Invalid Token Structure"}), 401
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)

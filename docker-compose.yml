@@ -7,15 +7,20 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      # Docker Desktop su Windows gestisce automaticamente la conversione dei percorsi relativi
-      - ./logs:/app/logs
+      # Modificato per mappare correttamente la cartella dove server.py scrive i log
+      - ./logs:/var/log/tomorrowland_festival
     environment:
       - PYTHONUNBUFFERED=1
+      - VULNERABILITY_ENABLED=${VULNERABILITY_ENABLED}
+      - SECRET_KEY=${SECRET_KEY}
 
   wazuh-manager:
     image: wazuh/wazuh-manager:4.7.2
     container_name: tomorrowland-wazuh
     ports:
-      - "55000:55000"
+      - "56000:55000"
     volumes:
+      - ./wazuh_config/local_rules.xml:/wazuh-config-mount/etc/rules/local_rules.xml:ro
+      - ./wazuh_config/ossec.conf:/wazuh-config-mount/etc/ossec.conf:ro
       - ./logs:/var/log/tomorrowland_festival:ro
+      - ./logs/wazuh_logs:/var/ossec/logs
