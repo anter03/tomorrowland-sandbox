@@ -5,5 +5,7 @@ services:
     build: ./app
     ports:
       - "5000:5000"
+    environment:
+      - SECURITY_MODE=SECURE
     volumes:
       - ./logs:/var/log/tomorrowland

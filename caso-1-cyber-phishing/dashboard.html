@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomorrowland - Crowd Management AI</title>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        h1, h2 { color: #38bdf8; border-bottom: 1px solid #334155; padding-bottom: 10px;}
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #475569;
+            background-color: #0f172a;
+            color: white;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #0284c7;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        button:hover { background-color: #0369a1; }
+        .hidden { display: none !important; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #334155; padding: 12px; text-align: left; }
+        th { background-color: #0f172a; color: #38bdf8; }
+        .alert { background-color: #ef4444; color: white; padding: 10px; border-radius: 5px; text-align: center; font-weight: bold; margin-bottom: 15px;}
+        
+        /* Effetto visivo per il collasso del sistema */
+        #critical-error {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(220, 38, 38, 0.95);
+            color: white; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; z-index: 9999;
+        }
+        #critical-error h1 { font-size: 4em; color: white; border: none; margin: 0;}
+    </style>
+</head>
+<body>
+
+    <div id="critical-error" class="hidden">
+        <h1>⚠️ CRITICAL FAILURE ⚠️</h1>
+        <h2>SISTEMA CASHLESS OFFLINE</h2>
+        <p>Integrità RFID compromessa. Modulo pagamenti bloccato.</p>
+    </div>
+
+    <div class="container">
+        <h1>🌐 Tomorrowland Crowd Management AI</h1>
+
+        <div id="login-section">
+            <h2>Autenticazione Operatori</h2>
+            <p>Inserire le credenziali per accedere alla telemetria RFID in tempo reale.</p>
+            <div id="login-error" class="alert hidden">Credenziali errate! Log registrato.</div>
+            <input type="text" id="username" placeholder="Email (es. m.rossi@tomorrowland.com)">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="attemptLogin()">Accedi al Sistema</button>
+        </div>
+
+        <div id="mfa-section" class="hidden">
+            <h2>Autenticazione a Due Fattori (MFA)</h2>
+            <p>Inserisci il codice OTP generato dall'app (es. 123456) per sbloccare la Dashboard.</p>
+            <div id="mfa-error" class="alert hidden">OTP non valido!</div>
+            <input type="text" id="otp-code" placeholder="Codice OTP a 6 cifre">
+            <button onclick="verifyMFA()" style="background-color: #10b981;">Verifica OTP</button>
+        </div>
+
+        <div id="dashboard-section" class="hidden">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2>Benvenuto, Operatore</h2>
+                <button onclick="logout()" style="width: auto; background-color: #475569;">Disconnetti</button>
+            </div>
+            
+            <h3>📡 Telemetria Braccialetti (Live)</h3>
+            <button onclick="fetchRFID()">Aggiorna Dati RFID</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Braccialetto</th>
+                        <th>Intestatario</th>
+                        <th>Saldo (Pearls)</th>
+                        <th>Posizione Attuale</th>
+                    </tr>
+                </thead>
+                <tbody id="rfid-table-body">
+                    </tbody>
+            </table>
+
+            <h3 style="margin-top: 40px; color: #f59e0b;">⚙️ Amministrazione: Aggiornamento POS/App</h3>
+            <p style="font-size: 0.9em; color: #94a3b8;">Attenzione: L'upload sovrascriverà la logica NFC dei dispositivi sul campo.</p>
+            <input type="file" id="update-file">
+            <button onclick="deployUpdate()" style="background-color: #f59e0b; color: #0f172a;">Esegui Deploy Aggiornamento</button>
+        </div>
+    </div>
+
+    <script>
+        // L'URL del tuo backend Flask locale
+        const API_BASE_URL = "http://127.0.0.1:5000/api/v1";
+        let jwtToken = null;
+
+        // 1. Funzione di Login (Collegata alla vulnerabilità CWE-307)
+        async function attemptLogin() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/staff/auth`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: user, password: pass })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.status === "MFA_REQUIRED") {
+                        document.getElementById('login-section').classList.add('hidden');
+                        document.getElementById('mfa-section').classList.remove('hidden');
+                        document.getElementById('login-error').classList.add('hidden');
+                    } else {
+                        jwtToken = data.token;
+                        document.getElementById('login-section').classList.add('hidden');
+                        document.getElementById('dashboard-section').classList.remove('hidden');
+                        document.getElementById('login-error').classList.add('hidden');
+                        fetchRFID(); // Carica i dati appena entra
+                    }
+                } else {
+                    document.getElementById('login-error').classList.remove('hidden');
+                }
+            } catch (error) {
+                alert("Errore di connessione al server Flask. Assicurati che sia in esecuzione su localhost:5000");
+            }
+        }
+
+        async function verifyMFA() {
+            const user = document.getElementById('username').value;
+            const otp = document.getElementById('otp-code').value;
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/staff/auth/mfa`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: user, otp: otp })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    jwtToken = data.token;
+                    document.getElementById('mfa-section').classList.add('hidden');
+                    document.getElementById('dashboard-section').classList.remove('hidden');
+                    document.getElementById('mfa-error').classList.add('hidden');
+                    fetchRFID();
+                } else {
+                    document.getElementById('mfa-error').classList.remove('hidden');
+                }
+            } catch (error) {
+                alert("Errore di connessione al server Flask.");
+            }
+        }
+
+        // 2. Funzione per recuperare i dati RFID sensibili
+        async function fetchRFID() {
+            if (!jwtToken) return;
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/rfid/telemetry`, {
+                    method: 'GET',
+                    headers: { 'Authorization': `Bearer ${jwtToken}` }
+                });
+
+                if (response.ok) {
+                    const resData = await response.json();
+                    const tbody = document.getElementById('rfid-table-body');
+                    tbody.innerHTML = ''; // Pulisce la tabella
+                    
+                    resData.data.forEach(item => {
+                        tbody.innerHTML += `
+                            <tr>
+                                <td>${item.bracelet_id}</td>
+                                <td>${item.owner}</td>
+                                <td><strong style="color: #22c55e;">${item.cashless_balance}</strong></td>
+                                <td>${item.location}</td>
+                            </tr>
+                        `;
+                    });
+                }
+            } catch (error) {
+                console.error("Errore nel recupero dati RFID", error);
+            }
+        }
+
+        // 3. Funzione per inviare il Malware (Collegata alla CWE-494)
+        async function deployUpdate() {
+            const fileInput = document.getElementById('update-file');
+            if (fileInput.files.length === 0) {
+                alert("Seleziona un file prima di fare il deploy!");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('update_file', fileInput.files[0]);
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/app/deploy`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${jwtToken}` },
+                    body: formData
+                });
+
+                if (response.ok) {
+                    // SE IL DEPLOY HA SUCCESSO (Vulnerabilità sfruttata), MOSTRIAMO IL PANICO
+                    document.getElementById('critical-error').classList.remove('hidden');
+                } else {
+                    alert("Errore nel deploy dell'aggiornamento.");
+                }
+            } catch (error) {
+                console.error("Errore upload", error);
+            }
+        }
+
+        function logout() {
+            jwtToken = null;
+            document.getElementById('dashboard-section').classList.add('hidden');
+            document.getElementById('login-section').classList.remove('hidden');
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        }
+    </script>
+</body>
+</html>
