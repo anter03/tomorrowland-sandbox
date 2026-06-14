@@ -1,1 +1,182 @@
-<h1>FRancesco suca</h1>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomorrowland x RedBull - Promo Esclusiva</title>
+    <style>
+        body {
+            background-color: #111827; /* Sfondo scuro profondo */
+            color: #f3f4f6;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .promo-container {
+            background: linear-gradient(145deg, #1f2937, #111827);
+            border: 1px solid #374151;
+            border-radius: 16px;
+            padding: 40px 20px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.2);
+        }
+
+        .logo-placeholder {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #38bdf8;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        h1 {
+            font-size: 1.8em;
+            color: #f8fafc;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            color: #10b981; /* Verde brillante per le "5 Pearls" */
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #9ca3af;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .download-btn {
+            background: linear-gradient(to right, #2563eb, #3b82f6);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+            background: linear-gradient(to right, #1d4ed8, #2563eb);
+        }
+
+        .download-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Overlay per l'infezione simulata */
+        #infection-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #ef4444; /* Rosso allarme */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #infection-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .skull {
+            font-size: 5em;
+            margin-bottom: 20px;
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); text-shadow: 0 0 10px #ef4444; }
+            to { transform: scale(1.1); text-shadow: 0 0 30px #ef4444; }
+        }
+
+        .terminal-text {
+            font-family: 'Courier New', Courier, monospace;
+            text-align: left;
+            width: 80%;
+            max-width: 300px;
+            color: #22c55e;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        .typing {
+            border-right: 2px solid #22c55e;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #22c55e; } }
+
+    </style>
+</head>
+<body>
+
+    <div class="promo-container">
+        <div class="logo-placeholder">🌐 🔋</div>
+        <h1>Tomorrowland x Energy Drink<br>Ricevi <span>5 Pearls</span> in Omaggio!</h1>
+        <p>Scarica l'App Partner ufficiale scansionando il QR Code. Ritira il tuo premio ai bar del festival!</p>
+        
+        <button class="download-btn" onclick="triggerMalware()">SCARICA APK PROMOZIONALE</button>
+        
+        <p style="font-size: 0.8em; color: #6b7280; margin-top: 20px;">*Disponibile solo per dispositivi Android (Sideloading abilitato).</p>
+    </div>
+
+    <!-- Overlay Nascosto (Appare al click) -->
+    <div id="infection-overlay">
+        <div class="skull">☠️</div>
+        <h2 style="margin: 0; font-size: 1.5em;">SISTEMA COMPROMESSO</h2>
+        <div class="terminal-text" id="terminal">
+            <!-- Testo animato iniettato via JS -->
+        </div>
+    </div>
+
+    <script>
+        function triggerMalware() {
+            // 1. Mostra il popup di base come richiesto
+            alert("DOWNLOAD AVVIATO... Esecuzione malware in background. Dispositivo compromesso e aggiunto alla Botnet Cognitiva.");
+            
+            // 2. Modifica il DOM per un impatto visivo scenografico durante la presentazione
+            const overlay = document.getElementById('infection-overlay');
+            const terminal = document.getElementById('terminal');
+            
+            overlay.classList.add('active');
+            
+            // Simula output del terminale
+            setTimeout(() => { terminal.innerHTML = "<p>> Injecting payload...</p>"; }, 500);
+            setTimeout(() => { terminal.innerHTML += "<p>> Bypassing Sandbox...</p>"; }, 1500);
+            setTimeout(() => { terminal.innerHTML += "<p>> Root access granted.</p>"; }, 2500);
+            setTimeout(() => { 
+                terminal.innerHTML += "<p class='typing'>> Adding to Botnet... SUCCESS.</p>"; 
+            }, 3500);
+        }
+    </script>
+
+</body>
+</html>
