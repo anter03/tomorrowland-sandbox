@@ -1,0 +1,54 @@
+# ============================================================
+#  PANIC ENGINE POC — SIP Spoofing Sandbox
+#  Progetto CSS — Caso di studio "Festival AI-driven (Barletta)"
+# ============================================================
+
+services:
+  # ── TARGET: Asterisk PBX (centralino vulnerabile) ──────────
+  gateway-sip:
+    build: ./gateway-sip
+    container_name: gateway-sip
+    hostname: gateway-sip
+    networks:
+      festival-net:
+        ipv4_address: 10.5.0.50
+    ports:
+      - "5060:5060/udp"
+      - "10000-10100:10000-10100/udp"
+    volumes:
+      - ./logs:/var/log/asterisk
+    restart: unless-stopped
+
+  # ── VITTIMA: Terminale operatore con Baresip ───────────────
+  terminale-operatore:
+    build: ./terminale-operatore
+    container_name: terminale-operatore
+    hostname: terminale-operatore
+    depends_on:
+      - gateway-sip
+    networks:
+      festival-net:
+        ipv4_address: 10.5.0.200
+    restart: unless-stopped
+
+  # ── THREAT ACTOR: Host attaccante Python ───────────────────
+  host-attaccante:
+    build: ./host-attaccante
+    container_name: host-attaccante
+    hostname: host-attaccante
+    depends_on:
+      - gateway-sip
+    networks:
+      festival-net:
+        ipv4_address: 10.5.0.99
+    volumes:
+      - ./deepfake_voice.wav:/app/payload/deepfake_voice.wav:ro
+    restart: unless-stopped
+
+# ── RETE ─────────────────────────────────────────────────────
+networks:
+  festival-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/24

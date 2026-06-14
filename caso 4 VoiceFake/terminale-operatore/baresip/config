@@ -1,0 +1,27 @@
+#
+# Baresip Configuration — Terminale Operatore
+# Auto-answer abilitato per simulare radio PoC (Push-to-Talk)
+#
+
+# --- SIP ---
+sip_listen          0.0.0.0:5060
+sip_autoanswer      yes
+
+# --- Audio (headless / Docker) ---
+# In ambiente Docker non c'è hardware audio.
+# Usiamo il modulo "aufile" per scrivere l'audio ricevuto su file
+# e leggere silenzio come sorgente.
+audio_player        aufile,/tmp/incoming.wav
+audio_source        aufile,/dev/null
+audio_alert         aufile,/dev/null
+
+# --- Codec ---
+# G.711 µ-law (PCMU) e A-law (PCMA) — standard telefonia
+audio_codecs        PCMU,PCMA
+
+# --- Moduli ---
+module              g711.so
+module              account.so
+module              aufile.so
+module              menu.so
+module              stdio.so

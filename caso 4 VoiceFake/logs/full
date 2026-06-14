@@ -1,0 +1,646 @@
+[2026-06-13 15:58:23.662] Asterisk 20.9.3 built by buildozer @ build-3-19-x86_64 on a x86_64 running Linux on 2025-01-10 10:27:31 UTC
+[2026-06-13 15:58:23.672] NOTICE[1] loader.c: 312 modules will be loaded.
+[2026-06-13 15:58:23.708] NOTICE[1] cdr.c: CDR simple logging enabled.
+[2026-06-13 15:58:23.709] NOTICE[1] indications.c: Default country for indication tones: us
+[2026-06-13 15:58:23.709] NOTICE[1] indications.c: Setting default indication country to 'us'
+[2026-06-13 15:58:23.711] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-13 15:58:23.712] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-13 15:58:23.715] WARNING[1] res_phoneprov.c: Unable to find a valid server address or name.
+[2026-06-13 15:58:23.716] ERROR[1] file.c: Error opening directory - /var/lib/asterisk/moh: No such file or directory
+[2026-06-13 15:58:23.716] WARNING[1] res_musiconhold.c: No music on hold classes configured, disabling music on hold.
+[2026-06-13 15:58:23.716] NOTICE[1] res_smdi.c: No SMDI interfaces are available to listen on, not starting SMDI listener.
+[2026-06-13 15:58:23.727] ERROR[1] ari/config.c: No configured users for ARI
+[2026-06-13 15:58:23.729] NOTICE[1] confbridge/conf_config_parser.c: Adding default_menu menu to app_confbridge
+[2026-06-13 15:58:23.730] NOTICE[1] cel_custom.c: No mappings found in cel_custom.conf. Not logging CEL to custom CSVs.
+[2026-06-13 15:58:23.741] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context default
+[2026-06-13 15:58:23.741] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context devices@myaliases
+[2026-06-13 15:58:23.741] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context other
+[2026-06-13 15:58:23.747] WARNING[1] pbx_app.c: Already have an application 'VoiceMail'
+[2026-06-13 15:58:23.747] WARNING[1] pbx_app.c: Already have an application 'VoiceMailMain'
+[2026-06-13 15:58:23.747] WARNING[1] pbx_app.c: Already have an application 'VMAuthenticate'
+[2026-06-13 15:58:23.747] WARNING[1] pbx_app.c: Already have an application 'VoiceMailPlayMsg'
+[2026-06-13 15:58:23.747] WARNING[1] pbx_app.c: Already have an application 'VMSayName'
+[2026-06-13 15:58:23.747] ERROR[1] pbx_functions.c: Function VM_INFO already registered.
+[2026-06-13 15:58:23.747] WARNING[1] manager.c: Manager: Action 'VoicemailUsersList' already registered
+[2026-06-13 15:58:23.747] WARNING[1] manager.c: Manager: Action 'VoicemailUserStatus' already registered
+[2026-06-13 15:58:23.747] WARNING[1] manager.c: Manager: Action 'VoicemailRefresh' already registered
+[2026-06-13 15:58:23.747] WARNING[1] manager.c: Manager: Action 'VoicemailBoxSummary' already registered
+[2026-06-13 15:58:23.747] WARNING[1] manager.c: Manager: Action 'VoicemailMove' already registered
+[2026-06-13 15:58:23.747] WARNING[1] manager.c: Manager: Action 'VoicemailRemove' already registered
+[2026-06-13 15:58:23.747] WARNING[1] manager.c: Manager: Action 'VoicemailForward' already registered
+[2026-06-13 15:58:23.747] ERROR[1] app_voicemail.c: Failure registering applications, functions or tests
+[2026-06-13 15:58:23.749] WARNING[1] loader.c: Some non-required modules failed to load.
+[2026-06-13 15:58:23.749] WARNING[1] loader.c: The deprecated module 'res_adsi.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 15:58:23.749] WARNING[1] loader.c: The deprecated module 'app_getcpeid.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 15:58:23.749] WARNING[1] loader.c: The deprecated module 'app_adsiprog.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 15:58:23.749] ERROR[1] loader.c: cel_sqlite3_custom declined to load.
+[2026-06-13 15:58:23.749] ERROR[1] loader.c: cdr_sqlite3_custom declined to load.
+[2026-06-13 15:58:23.749] ERROR[1] loader.c: Failed to resolve dependencies for res_http_media_cache
+[2026-06-13 15:58:23.749] ERROR[1] loader.c: res_http_media_cache declined to load.
+[2026-06-13 15:58:23.749] ERROR[1] loader.c: app_voicemail declined to load.
+[2026-06-13 15:58:23.749] VERBOSE[1] asterisk.c: Asterisk Ready.
+[2026-06-13 16:18:03.459] VERBOSE[1] asterisk.c: Asterisk cleanly ending (0).
+[2026-06-13 16:18:03.459] VERBOSE[1] asterisk.c: Executing last minute cleanups
+[2026-06-13 16:18:31.534] Asterisk 20.9.3 built by buildozer @ build-3-19-x86_64 on a x86_64 running Linux on 2025-01-10 10:27:31 UTC
+[2026-06-13 16:18:31.543] NOTICE[1] loader.c: 312 modules will be loaded.
+[2026-06-13 16:18:31.657] NOTICE[1] cdr.c: CDR simple logging enabled.
+[2026-06-13 16:18:31.660] NOTICE[1] indications.c: Default country for indication tones: us
+[2026-06-13 16:18:31.660] NOTICE[1] indications.c: Setting default indication country to 'us'
+[2026-06-13 16:18:31.663] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-13 16:18:31.665] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-13 16:18:31.669] WARNING[1] res_phoneprov.c: Unable to find a valid server address or name.
+[2026-06-13 16:18:31.670] ERROR[1] file.c: Error opening directory - /var/lib/asterisk/moh: No such file or directory
+[2026-06-13 16:18:31.670] WARNING[1] res_musiconhold.c: No music on hold classes configured, disabling music on hold.
+[2026-06-13 16:18:31.671] NOTICE[1] res_smdi.c: No SMDI interfaces are available to listen on, not starting SMDI listener.
+[2026-06-13 16:18:31.685] ERROR[1] ari/config.c: No configured users for ARI
+[2026-06-13 16:18:31.691] NOTICE[1] confbridge/conf_config_parser.c: Adding default_menu menu to app_confbridge
+[2026-06-13 16:18:31.693] NOTICE[1] cel_custom.c: No mappings found in cel_custom.conf. Not logging CEL to custom CSVs.
+[2026-06-13 16:18:31.705] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context default
+[2026-06-13 16:18:31.706] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context devices@myaliases
+[2026-06-13 16:18:31.706] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context other
+[2026-06-13 16:18:31.713] WARNING[1] pbx_app.c: Already have an application 'VoiceMail'
+[2026-06-13 16:18:31.713] WARNING[1] pbx_app.c: Already have an application 'VoiceMailMain'
+[2026-06-13 16:18:31.713] WARNING[1] pbx_app.c: Already have an application 'VMAuthenticate'
+[2026-06-13 16:18:31.713] WARNING[1] pbx_app.c: Already have an application 'VoiceMailPlayMsg'
+[2026-06-13 16:18:31.713] WARNING[1] pbx_app.c: Already have an application 'VMSayName'
+[2026-06-13 16:18:31.713] ERROR[1] pbx_functions.c: Function VM_INFO already registered.
+[2026-06-13 16:18:31.713] WARNING[1] manager.c: Manager: Action 'VoicemailUsersList' already registered
+[2026-06-13 16:18:31.713] WARNING[1] manager.c: Manager: Action 'VoicemailUserStatus' already registered
+[2026-06-13 16:18:31.713] WARNING[1] manager.c: Manager: Action 'VoicemailRefresh' already registered
+[2026-06-13 16:18:31.713] WARNING[1] manager.c: Manager: Action 'VoicemailBoxSummary' already registered
+[2026-06-13 16:18:31.713] WARNING[1] manager.c: Manager: Action 'VoicemailMove' already registered
+[2026-06-13 16:18:31.713] WARNING[1] manager.c: Manager: Action 'VoicemailRemove' already registered
+[2026-06-13 16:18:31.713] WARNING[1] manager.c: Manager: Action 'VoicemailForward' already registered
+[2026-06-13 16:18:31.713] ERROR[1] app_voicemail.c: Failure registering applications, functions or tests
+[2026-06-13 16:18:31.716] WARNING[1] loader.c: Some non-required modules failed to load.
+[2026-06-13 16:18:31.716] WARNING[1] loader.c: The deprecated module 'res_adsi.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 16:18:31.716] WARNING[1] loader.c: The deprecated module 'app_getcpeid.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 16:18:31.716] WARNING[1] loader.c: The deprecated module 'app_adsiprog.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 16:18:31.716] ERROR[1] loader.c: cel_sqlite3_custom declined to load.
+[2026-06-13 16:18:31.716] ERROR[1] loader.c: cdr_sqlite3_custom declined to load.
+[2026-06-13 16:18:31.716] ERROR[1] loader.c: Failed to resolve dependencies for res_http_media_cache
+[2026-06-13 16:18:31.716] ERROR[1] loader.c: res_http_media_cache declined to load.
+[2026-06-13 16:18:31.716] ERROR[1] loader.c: app_voicemail declined to load.
+[2026-06-13 16:18:31.717] VERBOSE[1] asterisk.c: Asterisk Ready.
+[2026-06-13 16:20:35.727] NOTICE[97][C-00000001] Ext. 200:  Direct dial to operator 200 from "Burgemeester Jeroen Baert" <mayor>
+[2026-06-13 16:21:40.240] ERROR[30] cdr_csv.c: Unable to open file /var/log/asterisk//cdr-csv//Master.csv : No such file or directory
+[2026-06-13 16:21:40.240] WARNING[30] cdr_csv.c: Unable to write CSV record to master '/var/log/asterisk//cdr-csv//Master.csv' : Invalid argument
+[2026-06-13 16:21:40.240] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:21:40.742] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:21:41.742] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:21:43.743] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:21:47.744] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:21:51.746] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:21:55.747] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:21:59.743] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:22:03.745] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:22:07.745] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:22:11.746] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:23:10.896] NOTICE[116][C-00000002] Ext. 200:  Direct dial to operator 200 from "Burgemeester Jeroen Baert" <mayor>
+[2026-06-13 16:24:15.404] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:24:15.405] ERROR[30] cdr_csv.c: Unable to open file /var/log/asterisk//cdr-csv//Master.csv : No such file or directory
+[2026-06-13 16:24:15.406] WARNING[30] cdr_csv.c: Unable to write CSV record to master '/var/log/asterisk//cdr-csv//Master.csv' : Invalid argument
+[2026-06-13 16:24:15.902] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:24:16.903] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:24:18.905] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:24:22.905] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:24:26.907] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:24:30.901] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:24:34.901] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:24:38.901] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:24:42.902] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 16:24:46.900] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:09:20.706] VERBOSE[1] asterisk.c: Asterisk cleanly ending (0).
+[2026-06-13 17:09:20.706] VERBOSE[1] asterisk.c: Executing last minute cleanups
+[2026-06-13 17:09:39.173] Asterisk 20.9.3 built by buildozer @ build-3-19-x86_64 on a x86_64 running Linux on 2025-01-10 10:27:31 UTC
+[2026-06-13 17:09:39.183] NOTICE[1] loader.c: 312 modules will be loaded.
+[2026-06-13 17:09:39.313] NOTICE[1] cdr.c: CDR simple logging enabled.
+[2026-06-13 17:09:39.317] NOTICE[1] indications.c: Default country for indication tones: us
+[2026-06-13 17:09:39.317] NOTICE[1] indications.c: Setting default indication country to 'us'
+[2026-06-13 17:09:39.321] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-13 17:09:39.324] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-13 17:09:39.328] WARNING[1] res_phoneprov.c: Unable to find a valid server address or name.
+[2026-06-13 17:09:39.330] ERROR[1] file.c: Error opening directory - /var/lib/asterisk/moh: No such file or directory
+[2026-06-13 17:09:39.330] WARNING[1] res_musiconhold.c: No music on hold classes configured, disabling music on hold.
+[2026-06-13 17:09:39.330] NOTICE[1] res_smdi.c: No SMDI interfaces are available to listen on, not starting SMDI listener.
+[2026-06-13 17:09:39.348] ERROR[1] ari/config.c: No configured users for ARI
+[2026-06-13 17:09:39.354] NOTICE[1] confbridge/conf_config_parser.c: Adding default_menu menu to app_confbridge
+[2026-06-13 17:09:39.360] NOTICE[1] cel_custom.c: No mappings found in cel_custom.conf. Not logging CEL to custom CSVs.
+[2026-06-13 17:09:39.374] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context default
+[2026-06-13 17:09:39.374] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context devices@myaliases
+[2026-06-13 17:09:39.374] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context other
+[2026-06-13 17:09:39.384] WARNING[1] pbx_app.c: Already have an application 'VoiceMail'
+[2026-06-13 17:09:39.384] WARNING[1] pbx_app.c: Already have an application 'VoiceMailMain'
+[2026-06-13 17:09:39.384] WARNING[1] pbx_app.c: Already have an application 'VMAuthenticate'
+[2026-06-13 17:09:39.384] WARNING[1] pbx_app.c: Already have an application 'VoiceMailPlayMsg'
+[2026-06-13 17:09:39.384] WARNING[1] pbx_app.c: Already have an application 'VMSayName'
+[2026-06-13 17:09:39.384] ERROR[1] pbx_functions.c: Function VM_INFO already registered.
+[2026-06-13 17:09:39.385] WARNING[1] manager.c: Manager: Action 'VoicemailUsersList' already registered
+[2026-06-13 17:09:39.385] WARNING[1] manager.c: Manager: Action 'VoicemailUserStatus' already registered
+[2026-06-13 17:09:39.385] WARNING[1] manager.c: Manager: Action 'VoicemailRefresh' already registered
+[2026-06-13 17:09:39.385] WARNING[1] manager.c: Manager: Action 'VoicemailBoxSummary' already registered
+[2026-06-13 17:09:39.385] WARNING[1] manager.c: Manager: Action 'VoicemailMove' already registered
+[2026-06-13 17:09:39.385] WARNING[1] manager.c: Manager: Action 'VoicemailRemove' already registered
+[2026-06-13 17:09:39.385] WARNING[1] manager.c: Manager: Action 'VoicemailForward' already registered
+[2026-06-13 17:09:39.385] ERROR[1] app_voicemail.c: Failure registering applications, functions or tests
+[2026-06-13 17:09:39.389] WARNING[1] loader.c: Some non-required modules failed to load.
+[2026-06-13 17:09:39.389] WARNING[1] loader.c: The deprecated module 'res_adsi.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 17:09:39.389] WARNING[1] loader.c: The deprecated module 'app_getcpeid.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 17:09:39.389] WARNING[1] loader.c: The deprecated module 'app_adsiprog.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 17:09:39.389] ERROR[1] loader.c: cel_sqlite3_custom declined to load.
+[2026-06-13 17:09:39.389] ERROR[1] loader.c: cdr_sqlite3_custom declined to load.
+[2026-06-13 17:09:39.389] ERROR[1] loader.c: Failed to resolve dependencies for res_http_media_cache
+[2026-06-13 17:09:39.389] ERROR[1] loader.c: res_http_media_cache declined to load.
+[2026-06-13 17:09:39.389] ERROR[1] loader.c: app_voicemail declined to load.
+[2026-06-13 17:09:39.391] VERBOSE[1] asterisk.c: Asterisk Ready.
+[2026-06-13 17:10:32.923] VERBOSE[1] asterisk.c: Asterisk cleanly ending (0).
+[2026-06-13 17:10:32.923] VERBOSE[1] asterisk.c: Executing last minute cleanups
+[2026-06-13 17:10:52.127] Asterisk 20.9.3 built by buildozer @ build-3-19-x86_64 on a x86_64 running Linux on 2025-01-10 10:27:31 UTC
+[2026-06-13 17:10:52.139] NOTICE[1] loader.c: 312 modules will be loaded.
+[2026-06-13 17:10:52.246] NOTICE[1] cdr.c: CDR simple logging enabled.
+[2026-06-13 17:10:52.249] NOTICE[1] indications.c: Default country for indication tones: us
+[2026-06-13 17:10:52.249] NOTICE[1] indications.c: Setting default indication country to 'us'
+[2026-06-13 17:10:52.251] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-13 17:10:52.253] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-13 17:10:52.256] WARNING[1] res_phoneprov.c: Unable to find a valid server address or name.
+[2026-06-13 17:10:52.257] ERROR[1] file.c: Error opening directory - /var/lib/asterisk/moh: No such file or directory
+[2026-06-13 17:10:52.257] WARNING[1] res_musiconhold.c: No music on hold classes configured, disabling music on hold.
+[2026-06-13 17:10:52.258] NOTICE[1] res_smdi.c: No SMDI interfaces are available to listen on, not starting SMDI listener.
+[2026-06-13 17:10:52.271] ERROR[1] ari/config.c: No configured users for ARI
+[2026-06-13 17:10:52.275] NOTICE[1] confbridge/conf_config_parser.c: Adding default_menu menu to app_confbridge
+[2026-06-13 17:10:52.277] NOTICE[1] cel_custom.c: No mappings found in cel_custom.conf. Not logging CEL to custom CSVs.
+[2026-06-13 17:10:52.289] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context default
+[2026-06-13 17:10:52.290] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context devices@myaliases
+[2026-06-13 17:10:52.290] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context other
+[2026-06-13 17:10:52.297] WARNING[1] pbx_app.c: Already have an application 'VoiceMail'
+[2026-06-13 17:10:52.297] WARNING[1] pbx_app.c: Already have an application 'VoiceMailMain'
+[2026-06-13 17:10:52.297] WARNING[1] pbx_app.c: Already have an application 'VMAuthenticate'
+[2026-06-13 17:10:52.297] WARNING[1] pbx_app.c: Already have an application 'VoiceMailPlayMsg'
+[2026-06-13 17:10:52.297] WARNING[1] pbx_app.c: Already have an application 'VMSayName'
+[2026-06-13 17:10:52.297] ERROR[1] pbx_functions.c: Function VM_INFO already registered.
+[2026-06-13 17:10:52.297] WARNING[1] manager.c: Manager: Action 'VoicemailUsersList' already registered
+[2026-06-13 17:10:52.297] WARNING[1] manager.c: Manager: Action 'VoicemailUserStatus' already registered
+[2026-06-13 17:10:52.297] WARNING[1] manager.c: Manager: Action 'VoicemailRefresh' already registered
+[2026-06-13 17:10:52.297] WARNING[1] manager.c: Manager: Action 'VoicemailBoxSummary' already registered
+[2026-06-13 17:10:52.297] WARNING[1] manager.c: Manager: Action 'VoicemailMove' already registered
+[2026-06-13 17:10:52.297] WARNING[1] manager.c: Manager: Action 'VoicemailRemove' already registered
+[2026-06-13 17:10:52.297] WARNING[1] manager.c: Manager: Action 'VoicemailForward' already registered
+[2026-06-13 17:10:52.297] ERROR[1] app_voicemail.c: Failure registering applications, functions or tests
+[2026-06-13 17:10:52.299] WARNING[1] loader.c: Some non-required modules failed to load.
+[2026-06-13 17:10:52.299] WARNING[1] loader.c: The deprecated module 'res_adsi.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 17:10:52.299] WARNING[1] loader.c: The deprecated module 'app_getcpeid.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 17:10:52.299] WARNING[1] loader.c: The deprecated module 'app_adsiprog.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 17:10:52.299] ERROR[1] loader.c: cel_sqlite3_custom declined to load.
+[2026-06-13 17:10:52.299] ERROR[1] loader.c: cdr_sqlite3_custom declined to load.
+[2026-06-13 17:10:52.299] ERROR[1] loader.c: Failed to resolve dependencies for res_http_media_cache
+[2026-06-13 17:10:52.299] ERROR[1] loader.c: res_http_media_cache declined to load.
+[2026-06-13 17:10:52.299] ERROR[1] loader.c: app_voicemail declined to load.
+[2026-06-13 17:10:52.300] VERBOSE[1] asterisk.c: Asterisk Ready.
+[2026-06-13 17:14:48.590] NOTICE[97][C-00000001] Ext. 200:  Direct dial to operator 200 from "Burgemeester Jeroen Baert" <mayor>
+[2026-06-13 17:15:53.102] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:15:53.102] ERROR[30] cdr_csv.c: Unable to open file /var/log/asterisk//cdr-csv//Master.csv : No such file or directory
+[2026-06-13 17:15:53.102] WARNING[30] cdr_csv.c: Unable to write CSV record to master '/var/log/asterisk//cdr-csv//Master.csv' : Invalid argument
+[2026-06-13 17:15:53.604] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:15:54.603] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:15:56.603] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:16:00.601] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:16:04.599] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:16:08.598] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:16:12.601] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:16:16.600] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:16:20.598] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:16:24.599] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:16:30.844] VERBOSE[1] asterisk.c: Asterisk cleanly ending (0).
+[2026-06-13 17:16:30.844] VERBOSE[1] asterisk.c: Executing last minute cleanups
+[2026-06-13 17:17:50.954] Asterisk 20.9.3 built by buildozer @ build-3-19-x86_64 on a x86_64 running Linux on 2025-01-10 10:27:31 UTC
+[2026-06-13 17:17:50.961] NOTICE[1] loader.c: 312 modules will be loaded.
+[2026-06-13 17:17:51.064] NOTICE[1] cdr.c: CDR simple logging enabled.
+[2026-06-13 17:17:51.068] NOTICE[1] indications.c: Default country for indication tones: us
+[2026-06-13 17:17:51.068] NOTICE[1] indications.c: Setting default indication country to 'us'
+[2026-06-13 17:17:51.070] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-13 17:17:51.072] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-13 17:17:51.075] WARNING[1] res_phoneprov.c: Unable to find a valid server address or name.
+[2026-06-13 17:17:51.076] ERROR[1] file.c: Error opening directory - /var/lib/asterisk/moh: No such file or directory
+[2026-06-13 17:17:51.076] WARNING[1] res_musiconhold.c: No music on hold classes configured, disabling music on hold.
+[2026-06-13 17:17:51.077] NOTICE[1] res_smdi.c: No SMDI interfaces are available to listen on, not starting SMDI listener.
+[2026-06-13 17:17:51.099] ERROR[1] ari/config.c: No configured users for ARI
+[2026-06-13 17:17:51.104] NOTICE[1] confbridge/conf_config_parser.c: Adding default_menu menu to app_confbridge
+[2026-06-13 17:17:51.107] NOTICE[1] cel_custom.c: No mappings found in cel_custom.conf. Not logging CEL to custom CSVs.
+[2026-06-13 17:17:51.121] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context default
+[2026-06-13 17:17:51.121] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context devices@myaliases
+[2026-06-13 17:17:51.121] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context other
+[2026-06-13 17:17:51.129] WARNING[1] pbx_app.c: Already have an application 'VoiceMail'
+[2026-06-13 17:17:51.129] WARNING[1] pbx_app.c: Already have an application 'VoiceMailMain'
+[2026-06-13 17:17:51.129] WARNING[1] pbx_app.c: Already have an application 'VMAuthenticate'
+[2026-06-13 17:17:51.129] WARNING[1] pbx_app.c: Already have an application 'VoiceMailPlayMsg'
+[2026-06-13 17:17:51.129] WARNING[1] pbx_app.c: Already have an application 'VMSayName'
+[2026-06-13 17:17:51.129] ERROR[1] pbx_functions.c: Function VM_INFO already registered.
+[2026-06-13 17:17:51.129] WARNING[1] manager.c: Manager: Action 'VoicemailUsersList' already registered
+[2026-06-13 17:17:51.129] WARNING[1] manager.c: Manager: Action 'VoicemailUserStatus' already registered
+[2026-06-13 17:17:51.129] WARNING[1] manager.c: Manager: Action 'VoicemailRefresh' already registered
+[2026-06-13 17:17:51.129] WARNING[1] manager.c: Manager: Action 'VoicemailBoxSummary' already registered
+[2026-06-13 17:17:51.129] WARNING[1] manager.c: Manager: Action 'VoicemailMove' already registered
+[2026-06-13 17:17:51.129] WARNING[1] manager.c: Manager: Action 'VoicemailRemove' already registered
+[2026-06-13 17:17:51.129] WARNING[1] manager.c: Manager: Action 'VoicemailForward' already registered
+[2026-06-13 17:17:51.129] ERROR[1] app_voicemail.c: Failure registering applications, functions or tests
+[2026-06-13 17:17:51.132] WARNING[1] loader.c: Some non-required modules failed to load.
+[2026-06-13 17:17:51.132] WARNING[1] loader.c: The deprecated module 'res_adsi.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 17:17:51.132] WARNING[1] loader.c: The deprecated module 'app_getcpeid.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 17:17:51.132] WARNING[1] loader.c: The deprecated module 'app_adsiprog.so' has been loaded and is running, it may be removed in a future version
+[2026-06-13 17:17:51.132] ERROR[1] loader.c: cel_sqlite3_custom declined to load.
+[2026-06-13 17:17:51.132] ERROR[1] loader.c: cdr_sqlite3_custom declined to load.
+[2026-06-13 17:17:51.132] ERROR[1] loader.c: Failed to resolve dependencies for res_http_media_cache
+[2026-06-13 17:17:51.132] ERROR[1] loader.c: res_http_media_cache declined to load.
+[2026-06-13 17:17:51.132] ERROR[1] loader.c: app_voicemail declined to load.
+[2026-06-13 17:17:51.133] VERBOSE[1] asterisk.c: Asterisk Ready.
+[2026-06-13 17:18:25.402] NOTICE[85][C-00000001] Ext. 200:  Direct dial to operator 200 from "Burgemeester Jeroen Baert" <mayor>
+[2026-06-13 17:19:29.908] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:19:29.912] ERROR[30] cdr_csv.c: Unable to open file /var/log/asterisk//cdr-csv//Master.csv : No such file or directory
+[2026-06-13 17:19:29.912] WARNING[30] cdr_csv.c: Unable to write CSV record to master '/var/log/asterisk//cdr-csv//Master.csv' : Invalid argument
+[2026-06-13 17:19:30.404] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:19:31.403] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:19:33.404] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:19:37.406] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:19:41.406] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:19:45.405] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:19:49.407] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:19:53.405] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:19:57.406] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:20:01.403] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-13 17:21:20.732] VERBOSE[1] asterisk.c: Asterisk cleanly ending (0).
+[2026-06-13 17:21:20.732] VERBOSE[1] asterisk.c: Executing last minute cleanups
+[2026-06-14 12:34:15.875] Asterisk 20.9.3 built by buildozer @ build-3-19-x86_64 on a x86_64 running Linux on 2025-01-10 10:27:31 UTC
+[2026-06-14 12:34:15.934] NOTICE[1] loader.c: 312 modules will be loaded.
+[2026-06-14 12:34:16.113] NOTICE[1] cdr.c: CDR simple logging enabled.
+[2026-06-14 12:34:16.116] NOTICE[1] indications.c: Default country for indication tones: us
+[2026-06-14 12:34:16.116] NOTICE[1] indications.c: Setting default indication country to 'us'
+[2026-06-14 12:34:16.119] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-14 12:34:16.121] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-14 12:34:16.126] WARNING[1] res_phoneprov.c: Unable to find a valid server address or name.
+[2026-06-14 12:34:16.127] ERROR[1] file.c: Error opening directory - /var/lib/asterisk/moh: No such file or directory
+[2026-06-14 12:34:16.127] WARNING[1] res_musiconhold.c: No music on hold classes configured, disabling music on hold.
+[2026-06-14 12:34:16.127] NOTICE[1] res_smdi.c: No SMDI interfaces are available to listen on, not starting SMDI listener.
+[2026-06-14 12:34:16.142] ERROR[1] ari/config.c: No configured users for ARI
+[2026-06-14 12:34:16.146] NOTICE[1] confbridge/conf_config_parser.c: Adding default_menu menu to app_confbridge
+[2026-06-14 12:34:16.148] NOTICE[1] cel_custom.c: No mappings found in cel_custom.conf. Not logging CEL to custom CSVs.
+[2026-06-14 12:34:16.161] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context default
+[2026-06-14 12:34:16.161] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context devices@myaliases
+[2026-06-14 12:34:16.161] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context other
+[2026-06-14 12:34:16.168] WARNING[1] pbx_app.c: Already have an application 'VoiceMail'
+[2026-06-14 12:34:16.168] WARNING[1] pbx_app.c: Already have an application 'VoiceMailMain'
+[2026-06-14 12:34:16.168] WARNING[1] pbx_app.c: Already have an application 'VMAuthenticate'
+[2026-06-14 12:34:16.168] WARNING[1] pbx_app.c: Already have an application 'VoiceMailPlayMsg'
+[2026-06-14 12:34:16.168] WARNING[1] pbx_app.c: Already have an application 'VMSayName'
+[2026-06-14 12:34:16.168] ERROR[1] pbx_functions.c: Function VM_INFO already registered.
+[2026-06-14 12:34:16.168] WARNING[1] manager.c: Manager: Action 'VoicemailUsersList' already registered
+[2026-06-14 12:34:16.168] WARNING[1] manager.c: Manager: Action 'VoicemailUserStatus' already registered
+[2026-06-14 12:34:16.168] WARNING[1] manager.c: Manager: Action 'VoicemailRefresh' already registered
+[2026-06-14 12:34:16.168] WARNING[1] manager.c: Manager: Action 'VoicemailBoxSummary' already registered
+[2026-06-14 12:34:16.168] WARNING[1] manager.c: Manager: Action 'VoicemailMove' already registered
+[2026-06-14 12:34:16.168] WARNING[1] manager.c: Manager: Action 'VoicemailRemove' already registered
+[2026-06-14 12:34:16.168] WARNING[1] manager.c: Manager: Action 'VoicemailForward' already registered
+[2026-06-14 12:34:16.168] ERROR[1] app_voicemail.c: Failure registering applications, functions or tests
+[2026-06-14 12:34:16.170] WARNING[1] loader.c: Some non-required modules failed to load.
+[2026-06-14 12:34:16.170] WARNING[1] loader.c: The deprecated module 'res_adsi.so' has been loaded and is running, it may be removed in a future version
+[2026-06-14 12:34:16.170] WARNING[1] loader.c: The deprecated module 'app_getcpeid.so' has been loaded and is running, it may be removed in a future version
+[2026-06-14 12:34:16.170] WARNING[1] loader.c: The deprecated module 'app_adsiprog.so' has been loaded and is running, it may be removed in a future version
+[2026-06-14 12:34:16.170] ERROR[1] loader.c: cel_sqlite3_custom declined to load.
+[2026-06-14 12:34:16.170] ERROR[1] loader.c: cdr_sqlite3_custom declined to load.
+[2026-06-14 12:34:16.170] ERROR[1] loader.c: Failed to resolve dependencies for res_http_media_cache
+[2026-06-14 12:34:16.170] ERROR[1] loader.c: res_http_media_cache declined to load.
+[2026-06-14 12:34:16.170] ERROR[1] loader.c: app_voicemail declined to load.
+[2026-06-14 12:34:16.171] VERBOSE[1] asterisk.c: Asterisk Ready.
+[2026-06-14 13:09:07.825] NOTICE[90][C-00000001] Ext. 200:  Direct dial to operator 200 from "Burgemeester Jeroen Baert" <mayor>
+[2026-06-14 13:10:12.334] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-14 13:10:12.337] ERROR[30] cdr_csv.c: Unable to open file /var/log/asterisk//cdr-csv//Master.csv : No such file or directory
+[2026-06-14 13:10:12.337] WARNING[30] cdr_csv.c: Unable to write CSV record to master '/var/log/asterisk//cdr-csv//Master.csv' : Invalid argument
+[2026-06-14 13:10:12.833] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-14 13:10:13.831] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-14 13:10:15.832] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-14 13:10:19.834] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-14 13:10:23.835] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-14 13:10:27.830] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-14 13:10:31.830] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-14 13:10:35.829] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-14 13:10:39.829] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-14 13:10:43.829] ERROR[34] pjproject: 	        sip_endpoint.c Error processing packet from 10.5.0.200:5060: Missing required header(s) (PJSIP_EMISSINGHDR)  CSeq [code 171050]:
+SIP/2.0 200 OK
+Content-Length: 0
+
+
+-- end of packet.
+[2026-06-14 13:20:35.620] VERBOSE[1] asterisk.c: Asterisk cleanly ending (0).
+[2026-06-14 13:20:35.620] VERBOSE[1] asterisk.c: Executing last minute cleanups
+[2026-06-14 13:31:49.062] Asterisk 20.9.3 built by buildozer @ build-3-19-x86_64 on a x86_64 running Linux on 2025-01-10 10:27:31 UTC
+[2026-06-14 13:31:49.151] NOTICE[1] loader.c: 312 modules will be loaded.
+[2026-06-14 13:31:49.419] NOTICE[1] cdr.c: CDR simple logging enabled.
+[2026-06-14 13:31:49.424] NOTICE[1] indications.c: Default country for indication tones: us
+[2026-06-14 13:31:49.424] NOTICE[1] indications.c: Setting default indication country to 'us'
+[2026-06-14 13:31:49.430] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-14 13:31:49.433] ERROR[35] res_pjsip/config_system.c: There are no local system nameservers configured, resorting to system resolution
+[2026-06-14 13:31:49.440] WARNING[1] res_phoneprov.c: Unable to find a valid server address or name.
+[2026-06-14 13:31:49.442] ERROR[1] file.c: Error opening directory - /var/lib/asterisk/moh: No such file or directory
+[2026-06-14 13:31:49.442] WARNING[1] res_musiconhold.c: No music on hold classes configured, disabling music on hold.
+[2026-06-14 13:31:49.442] NOTICE[1] res_smdi.c: No SMDI interfaces are available to listen on, not starting SMDI listener.
+[2026-06-14 13:31:49.467] ERROR[1] ari/config.c: No configured users for ARI
+[2026-06-14 13:31:49.474] NOTICE[1] confbridge/conf_config_parser.c: Adding default_menu menu to app_confbridge
+[2026-06-14 13:31:49.480] NOTICE[1] cel_custom.c: No mappings found in cel_custom.conf. Not logging CEL to custom CSVs.
+[2026-06-14 13:31:49.501] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context default
+[2026-06-14 13:31:49.501] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context devices@myaliases
+[2026-06-14 13:31:49.501] ERROR[1] app_voicemail_imap.c: Couldn't find mailbox 1234 in context other
+[2026-06-14 13:31:49.518] WARNING[1] pbx_app.c: Already have an application 'VoiceMail'
+[2026-06-14 13:31:49.518] WARNING[1] pbx_app.c: Already have an application 'VoiceMailMain'
+[2026-06-14 13:31:49.518] WARNING[1] pbx_app.c: Already have an application 'VMAuthenticate'
+[2026-06-14 13:31:49.518] WARNING[1] pbx_app.c: Already have an application 'VoiceMailPlayMsg'
+[2026-06-14 13:31:49.518] WARNING[1] pbx_app.c: Already have an application 'VMSayName'
+[2026-06-14 13:31:49.518] ERROR[1] pbx_functions.c: Function VM_INFO already registered.
+[2026-06-14 13:31:49.518] WARNING[1] manager.c: Manager: Action 'VoicemailUsersList' already registered
+[2026-06-14 13:31:49.518] WARNING[1] manager.c: Manager: Action 'VoicemailUserStatus' already registered
+[2026-06-14 13:31:49.518] WARNING[1] manager.c: Manager: Action 'VoicemailRefresh' already registered
+[2026-06-14 13:31:49.518] WARNING[1] manager.c: Manager: Action 'VoicemailBoxSummary' already registered
+[2026-06-14 13:31:49.518] WARNING[1] manager.c: Manager: Action 'VoicemailMove' already registered
+[2026-06-14 13:31:49.518] WARNING[1] manager.c: Manager: Action 'VoicemailRemove' already registered
+[2026-06-14 13:31:49.518] WARNING[1] manager.c: Manager: Action 'VoicemailForward' already registered
+[2026-06-14 13:31:49.518] ERROR[1] app_voicemail.c: Failure registering applications, functions or tests
+[2026-06-14 13:31:49.523] WARNING[1] loader.c: Some non-required modules failed to load.
+[2026-06-14 13:31:49.523] WARNING[1] loader.c: The deprecated module 'res_adsi.so' has been loaded and is running, it may be removed in a future version
+[2026-06-14 13:31:49.523] WARNING[1] loader.c: The deprecated module 'app_getcpeid.so' has been loaded and is running, it may be removed in a future version
+[2026-06-14 13:31:49.524] WARNING[1] loader.c: The deprecated module 'app_adsiprog.so' has been loaded and is running, it may be removed in a future version
+[2026-06-14 13:31:49.524] ERROR[1] loader.c: cel_sqlite3_custom declined to load.
+[2026-06-14 13:31:49.524] ERROR[1] loader.c: cdr_sqlite3_custom declined to load.
+[2026-06-14 13:31:49.524] ERROR[1] loader.c: Failed to resolve dependencies for res_http_media_cache
+[2026-06-14 13:31:49.524] ERROR[1] loader.c: res_http_media_cache declined to load.
+[2026-06-14 13:31:49.524] ERROR[1] loader.c: app_voicemail declined to load.
+[2026-06-14 13:31:49.526] VERBOSE[1] asterisk.c: Asterisk Ready.
+[2026-06-14 13:33:17.747] VERBOSE[1] asterisk.c: Asterisk cleanly ending (0).
+[2026-06-14 13:33:17.747] VERBOSE[1] asterisk.c: Executing last minute cleanups

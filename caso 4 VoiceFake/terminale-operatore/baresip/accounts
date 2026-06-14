@@ -1,0 +1,3 @@
+# Account SIP per registrazione su gateway Asterisk
+# answermode=auto → risposta automatica alle chiamate in ingresso
+<sip:200@10.5.0.50>;auth_pass=operatore123;answermode=auto;audio_codecs=PCMU,PCMA;transport=udp
