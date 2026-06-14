@@ -288,3 +288,8 @@
 2026-06-13 13:54:15,468 - INFO - [33mPress CTRL+C to quit[0m
 2026-06-13 13:54:30,948 - INFO - 172.18.0.1 - - [13/Jun/2026 13:54:30] "OPTIONS /api/v1/staff/auth HTTP/1.1" 200 -
 2026-06-13 13:54:30,956 - INFO - 172.18.0.1 - - [13/Jun/2026 13:54:30] "POST /api/v1/staff/auth HTTP/1.1" 200 -
+2026-06-13 15:17:41,445 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2026-06-13 15:17:41,446 - INFO - [33mPress CTRL+C to quit[0m

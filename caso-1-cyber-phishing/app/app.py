@@ -86,7 +86,15 @@ def deploy_update():
         file.save(os.path.join('/tmp', file.filename))
         logging.info(f"UPDATE_PUSHED_SUCCESSFULLY: Fake Update '{file.filename}' inviato a 100.000 braccialetti.")
         return jsonify({"status": "CRITICAL_SUCCESS", "message": "Sistema Cashless compromesso. Update Pushato."}), 200
+        return jsonify({"status": "CRITICAL_SUCCESS", "message": "Sistema Cashless compromesso. Update Pushato."}), 200
     return jsonify({"error": "Bad Request"}), 400
+
+# 4. QUISHING / PHYSICAL SPOOFING (Caso 3)
+from flask import render_template
+
+@app.route('/promo', methods=['GET'])
+def fake_sponsor_page():
+    return render_template('sponsor_promo.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
